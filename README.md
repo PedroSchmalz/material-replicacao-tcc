@@ -1,11 +1,15 @@
 # Classificação de Relevância e Análise de Sentimento de Publicações no X de Congressistas Brasileiros sobre Armas de Fogo
 
+## Citação
+
+Se este repositório for utilizado em trabalhos acadêmicos, solicita-se a citação do seguinte trabalho:
+
+Schmalz, Pedro (2026). Armas, Violência, “Twitter”: Classificação de Relevância e Análise de Sentimento de Publicações de Políticos Brasileiros. Trabalho de Conclusão do curso de Data Science & Analytics, USP-Esalq.
+
 ## Descrição
 
 Este repositório contém o material de replicação do Trabalho de
-Conclusão de Curso intitulado *"Classificação de Relevância e Análise de
-Sentimento de Publicações no X de Congressistas Brasileiros sobre Armas
-de Fogo"*.
+Conclusão de Curso intitulado *"Armas, Violência, 'Twitter': Classificação de Relevância e Análise de Sentimento de Publicações de Políticos Brasileiros"*.
 
 Material de replicação do TCC apresentado na USP-Esalq como parte dos
 requisitos para obtenção do MBA em Data Science & Analytics.
@@ -15,14 +19,14 @@ X (Twitter) entre 2019 e 2023, com base em duas tarefas principais de
 Processamento de Linguagem Natural (PLN):
 
 -   Classificação de relevância: identificação de publicações
-    relacionadas ao tema armas/violência\
+    relacionadas ao tema armas/violência
 -   Análise de sentimento: classificação das publicações em três
     categorias (positivo, negativo e incerto)
 
 Os modelos foram desenvolvidos a partir de arquiteturas de aprendizado
 profundo baseadas no BERTimbau.
 
-------------------------------------------------------------------------
+
 
 ## Objetivo do Repositório
 
@@ -34,22 +38,19 @@ O conjunto de dados original não é disponibilizado, em função de
 restrições relacionadas aos termos de uso da plataforma e à preservação
 do corpus para investigações futuras.
 
-------------------------------------------------------------------------
 
 ## Metodologia (Resumo)
 
 -   Coleta de publicações de congressistas brasileiros no X
-    (2019--2023)\
--   Filtragem por palavras-chave relacionadas a armas de fogo\
+    (2019--2023)
+-   Filtragem por palavras-chave relacionadas a armas de fogo
 -   Anotação manual de uma amostra de 3.000 publicações para
-    classificação de relevância\
--   Treinamento de modelos baseados em BERTimbau\
+    classificação de relevância
+-   Treinamento de modelos baseados em BERTimbau
 -   Transfer learning para análise de sentimento a partir do dataset
-    CoVid-Pol\
--   Avaliação com métricas como F1-macro e acurácia\
+    CoVid-Pol
+-   Avaliação com métricas como F1-macro e acurácia
 -   Aplicação dos modelos ao conjunto completo de dados
-
-------------------------------------------------------------------------
 
 ## Resultados Principais
 
