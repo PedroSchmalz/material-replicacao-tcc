@@ -10,7 +10,7 @@ Schmalz, Pedro (2026). Armas, Violência e Política: Classificação de Relevâ
 
 Este repositório contém o material de replicação do Trabalho de Conclusão de Curso intitulado *"Armas, Violência e Política: Classificação de Relevância e Análise de Sentimento de Publicações de Congressistas Brasileiros no X"*.
 
-O material complementa a dissertação apresentada como requisito parcial para obtenção do **MBA em Data Science & Analytics** pela USP-Esalq em 2026.
+O material complementa a dissertação apresentada como requisito parcial para obtenção **MBA de especialista em Data Science & Analytics** pela USP-Esalq em 2026.
 
 ### Escopo da Pesquisa
 
