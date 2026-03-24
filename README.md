@@ -4,169 +4,170 @@
 
 Se este repositório for utilizado em trabalhos acadêmicos, solicita-se a citação do seguinte trabalho:
 
-Schmalz, Pedro (2026). Armas, Violência, “Twitter”: Classificação de Relevância e Análise de Sentimento de Publicações de Políticos Brasileiros. Trabalho de Conclusão do curso de Data Science & Analytics, USP-Esalq.
+Schmalz, Pedro (2026). Armas, Violência e Política: Classificação de Relevância e Análise de Sentimento de Publicações de Congressistas Brasileiros no X. Trabalho de Conclusão de Curso em Data Science & Analytics, USP-Esalq.
 
 ## Descrição
 
-Este repositório contém o material de replicação do Trabalho de
-Conclusão de Curso intitulado *"Armas, Violência, 'Twitter': Classificação de Relevância e Análise de Sentimento de Publicações de Políticos Brasileiros"*.
+Este repositório contém o material de replicação do Trabalho de Conclusão de Curso intitulado *"Armas, Violência e Política: Classificação de Relevância e Análise de Sentimento de Publicações de Congressistas Brasileiros no X"*.
 
-Material de replicação do TCC apresentado na USP-Esalq como parte dos
-requisitos para obtenção do MBA em Data Science & Analytics.
+O material complementa a dissertação apresentada como requisito parcial para obtenção do **MBA em Data Science & Analytics** pela USP-Esalq em 2026.
 
-O estudo investiga o discurso de congressistas brasileiros na plataforma
-X (Twitter) entre 2019 e 2023, com base em duas tarefas principais de
-Processamento de Linguagem Natural (PLN):
+### Escopo da Pesquisa
 
--   Classificação de relevância: identificação de publicações
-    relacionadas ao tema armas/violência
--   Análise de sentimento: classificação das publicações em três
-    categorias (positivo, negativo e incerto)
+Este estudo investiga o discurso de congressistas brasileiros na plataforma X (antigo Twitter) entre 2019 e 2023, utilizando duas tarefas principais de **Processamento de Linguagem Natural (PLN)**:
 
-Os modelos foram desenvolvidos a partir de arquiteturas de aprendizado
-profundo baseadas no BERTimbau.
+- **Classificação de Relevância**: Identificação automatizada de publicações relacionadas a armas de fogo e violência
+- **Análise de Sentimento**: Classificação em três categorias (positivo, negativo, incerto/neutro)
+
+Os modelos foram desenvolvidos usando arquiteturas de aprendizado profundo baseadas em **BERTimbau**, um modelo BERT otimizado para o português.
 
 
 
 ## Objetivo do Repositório
 
-Disponibilizar os códigos, modelos e instruções necessárias para
-permitir a reprodutibilidade das etapas metodológicas descritas no
-trabalho.
+Disponibilizar os códigos, modelos treinados e documentação necessária para **reproduzir as etapas metodológicas** descritas no trabalho e aplicar os modelos em novos dados.
 
-O conjunto de dados original não é disponibilizado, em função de
-restrições relacionadas aos termos de uso da plataforma e à preservação
-do corpus para investigações futuras.
+⚠️ **Nota sobre os dados**: O conjunto de dados original não é disponibilizado devido a restrições dos termos de uso da plataforma X e à preservação do corpus para futuras investigações.
 
 
 ## Metodologia (Resumo)
 
--   Coleta de publicações de congressistas brasileiros no X
-    (2019--2023)
--   Filtragem por palavras-chave relacionadas a armas de fogo
--   Anotação manual de uma amostra de 3.000 publicações para
-    classificação de relevância
--   Treinamento de modelos baseados em BERTimbau
--   Transfer learning para análise de sentimento a partir do dataset
-    CoVid-Pol
--   Avaliação com métricas como F1-macro e acurácia
--   Aplicação dos modelos ao conjunto completo de dados
+1. Coleta de publicações de congressistas brasileiros no X (2019–2023)
+2. Filtragem por palavras-chave relacionadas a armas de fogo
+3. Anotação manual de amostra de 3.000 publicações (classificação de relevância)
+4. Treinamento de modelos baseados em BERTimbau com validação cruzada
+5. Transfer learning para análise de sentimento utilizando dataset CoVid-Pol
+6. Avaliação quantitativa (F1-macro, acurácia, matriz de confusão)
+7. Aplicação dos modelos ao conjunto completo de dados
 
 ## Resultados Principais
 
--   Classificação de relevância:
-    -   F1-macro: aproximadamente 0,91\
-    -   Acurácia: aproximadamente 89%
--   Análise de sentimento:
-    -   F1-macro: aproximadamente 0,67\
-    -   Acurácia: aproximadamente 87%
+### Classificação de Relevância
+- **F1-macro**: ~0,91
+- **Acurácia**: ~89%
 
-Os resultados indicam bom desempenho na identificação de conteúdo
-relevante e maior dificuldade na tarefa de análise de sentimento,
-especialmente em classes minoritárias.
+### Análise de Sentimento
+- **F1-macro**: ~0,67
+- **Acurácia**: ~87%
+
+**Interpretação**: O desempenho excelente na classificação de relevância indica que o modelo identifica com confiabilidade publicações sobre armas. O resultado menor na análise de sentimento reflete a dificuldade geral em detectar nuances de sentimento em textos políticos, especialmente em classes minoritárias.
 
 ------------------------------------------------------------------------
 
 ## Estrutura do Repositório
 
-``` bash
+```bash
 ├── data/
-│   └── (dados não disponibilizados)
-├── notebooks/
-├── models/
-├── src/
-├── requirements.txt
-└── README.md
+│   ├── raw/              # Dados originais (não disponibilizados)
+│   ├── processed/        # Dados processados
+│   └── annotations/      # Dados anotados manualmente
+├── notebooks/            # Jupyter notebooks com análises e treinamento
+│   ├── 01_exploratory_data_analysis.ipynb
+│   ├── 02_data_preprocessing.ipynb
+│   ├── 03_model_training_relevance.ipynb
+│   └── 04_model_training_sentiment.ipynb
+├── models/               # Modelos treinados (em formato .pt ou .pkl)
+│   ├── relevance_model/
+│   └── sentiment_model/
+├── src/                  # Código-fonte modular
+│   ├── data_loader.py
+│   ├── preprocessing.py
+│   ├── model.py
+│   └── evaluation.py
+├── requirements.txt      # Dependências do projeto
+├── LICENSE               # Licença MIT
+└── README.md             # Este arquivo
 ```
 
-------------------------------------------------------------------------
+---
 
-## Requisitos
+## Como Usar
 
-Recomenda-se o uso de Python 3.10 ou superior.
+### Instalação
 
-Instalação das dependências:
+Recomenda-se Python 3.10 ou superior.
 
-``` bash
+```bash
+# Clone o repositório
+git clone <url-do-repositorio>
+cd material-replicacao-tcc
+
+# Crie um ambiente virtual (optional but recommended)
+python -m venv venv
+source venv/bin/activate  # No Windows: venv\Scripts\activate
+
+# Instale as dependências
 pip install -r requirements.txt
 ```
 
-Principais bibliotecas utilizadas:
+### Executar os Notebooks
 
--   transformers\
--   torch\
--   scikit-learn\
--   pandas\
--   numpy
-
-------------------------------------------------------------------------
-
-## Reprodução das Análises
-
-### 1. Preparação dos dados
-
-Como o dataset original não é disponibilizado, recomenda-se a coleta de
-dados por meio da API da plataforma X ou fontes equivalentes, seguida da
-aplicação de filtros por palavras-chave relacionadas ao tema.
-
-### 2. Pré-processamento
-
-``` bash
-python src/preprocessing.py
+```bash
+jupyter notebook notebooks/
 ```
 
-### 3. Treinamento dos modelos
+Os notebooks devem ser executados em ordem (01 → 02 → 03 → 04).
 
-Classificação de relevância:
+### Usar os Modelos Treinados
 
-``` bash
-python src/train.py --task relevancia
+```python
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
+# Carregar modelo de relevância
+tokenizer = AutoTokenizer.from_pretrained("./models/relevance_model")
+model = AutoModelForSequenceClassification.from_pretrained("./models/relevance_model")
+
+# Fazer predições
+text = "Sua publicação aqui"
+inputs = tokenizer(text, return_tensors="pt")
+outputs = model(**inputs)
 ```
 
-Análise de sentimento:
+## Requisitos e Dependências
 
-``` bash
-python src/train.py --task sentimento
+Principais bibliotecas:
+
+```txt
+transformers>=4.30.0
+torch>=2.0.0
+scikit-learn>=1.3.0
+pandas>=2.0.0
+numpy>=1.24.0
+jupyter>=1.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
 ```
 
-### 4. Avaliação
+Instale com: `pip install -r requirements.txt`
 
-``` bash
-python src/evaluate.py
-```
+---
 
-### 5. Aplicação dos modelos
-
-``` bash
-python src/predict.py
-```
-
-------------------------------------------------------------------------
 
 ## Reprodutibilidade
 
-Este repositório fornece os elementos necessários para replicação do
-pipeline metodológico, incluindo etapas de processamento, treinamento,
-avaliação e aplicação dos modelos. A ausência do dataset original não
-impede a reprodução das etapas descritas.
+Este repositório fornece os elementos necessários para replicação do pipeline metodológico, incluindo etapas de processamento, treinamento, avaliação e aplicação dos modelos. A ausência do dataset original não impede a reprodução das etapas descritas.
 
-------------------------------------------------------------------------
+## Licença
 
-## Referências
-
--   Souza, F.; Nogueira, R.; Lotufo, R. (2020). BERTimbau\
--   Barberia et al. (2025a; 2025b). CoVid-Pol\
--   Liu, B. (2010). Sentiment Analysis\
--   Mohammad et al. (2017)
-
-------------------------------------------------------------------------
-
-## Autor
-
-Pedro Henrique Schmalz
-
-------------------------------------------------------------------------
+Este projeto é disponibilizado sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## Contato
 
-Dúvidas e sugestões podem ser encaminhadas via GitHub.
+Para dúvidas sobre o material de replicação, entre em contato com:
+
+**Pedro Schmalz**  
+Email: pedrosantanaschmalz@usp.br ou @gmail.com
+
+[Linkedin](https://www.linkedin.com/in/pedro-schmalz/)
+
+---
+
+## Referências Principais
+
+- Devlin, J., et al. (2019). *BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding*. ICLR.
+- Souza, F., Nogueira, R., Lotufo, R. (2020). *BERTimbau: Pretrained BERT Models for Brazilian Portuguese*. LREC.
+- Documentation: [Hugging Face Transformers](https://huggingface.co/docs/transformers/)
+
+---
+
+**Últimas atualizações**: Março de 2026
